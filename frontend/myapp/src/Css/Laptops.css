@@ -1,0 +1,131 @@
+
+.container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeInDown 1s ease-in-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+    justify-items: center;
+   
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 350px;
+    height: 450px;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #1c1c1c;
+    color: #fff;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05); 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease; 
+}
+
+.card-img-top:hover {
+    transform: scale(1.1); 
+}
+
+.card-body {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: fadeInUp 1s ease-in-out; 
+    text-align: left;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.card-title {
+    font-size: 1.40rem; 
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #ff6ec4, #7873f5);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+ 
+}
+
+.card-text {
+    font-size: 1.1rem; 
+    color: #161515;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.card-price {
+    font-size: 1.25rem; 
+    color: #161515;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: #ff6ec4;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+    font-size: 1rem;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: #7873f5; 
+    transform: scale(1.1);
+}

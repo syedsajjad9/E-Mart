@@ -1,0 +1,70 @@
+/* Footer.js */
+
+.footer {
+    background-color: #0F3057;
+    color: #fff;
+    padding: 2rem 0;
+    margin-top: 5px;
+    text-align: center; 
+}
+
+.footer h6 {
+    font-size: 1.25rem; 
+    font-weight: 600; 
+    color: white;
+}
+
+
+.footer p {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer ul li a:hover {
+    color: #fff;
+}
+
+.footer .small {
+    font-size: 0.75rem;
+    color: #ccc;
+    opacity: 0.8; 
+}
+
+
+.footer ul li a:hover {
+    transform: translateY(-2px); 
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.footer h6,
+.footer p,
+.footer ul li,
+.footer .small {
+    animation: fadeIn 1s ease-in-out;
+   
+}
