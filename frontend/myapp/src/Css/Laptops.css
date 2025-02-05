@@ -1,131 +1,265 @@
+/* General container styling */
 
-.container {
+.laptops-container,
+.mobiles-container,
+.headsets-container,
+.smartwatches-container {
     margin-top: 20px;
     text-align: center;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
 }
 
-.container h2 {
+/* Heading styling */
+.laptops-container h2,
+.mobiles-container h2,
+.headsets-container h2,
+.smartwatches-container h2 {
     font-size: 2.5rem;
     margin-bottom: 30px;
-    color: #333;
-    background: linear-gradient(45deg, #007bff, #0056b3);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-    animation: fadeInDown 1s ease-in-out;
+    color: #2c3e50;
+    font-weight: bold;
 }
 
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translate3d(0, -100%, 0);
-    }
-    to {
-        opacity: 1;
-        transform: none;
-    }
-}
-
-.card-container {
+/* Card container grid layout */
+.laptops-card-container,
+.mobiles-card-container,
+.headsets-card-container,
+.smartwatches-card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 0 20px;
-    justify-items: center;
-   
 }
 
-.card {
+/* Card styling */
+.laptops-card,
+.mobiles-card,
+.headsets-card,
+.smartwatches-card {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    max-width: 350px;
-    height: 450px;
-    border: none;
-    border-radius: 15px;
+    max-width: 300px;
+    height: 400px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
     overflow: hidden;
-    background: #1c1c1c;
-    color: #fff;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    
+    background: #ffffff;
+    color: #2c3e50;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
-    transform: translateY(-10px) scale(1.05); 
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+/* Card hover effect */
+.laptops-card:hover,
+.mobiles-card:hover,
+.headsets-card:hover,
+.smartwatches-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.card-img-top {
-    height: 200px;
+/* Card image styling */
+.laptops-card-img-top,
+.mobiles-card-img-top,
+.headsets-card-img-top,
+.smartwatches-card-img-top {
+    height: 150px;
     object-fit: cover;
-    transition: transform 0.4s ease; 
+    border-bottom: 1px solid #ddd;
 }
 
-.card-img-top:hover {
-    transform: scale(1.1); 
-}
-
-.card-body {
-    padding: 20px;
+/* Card body styling */
+.laptops-card-body,
+.mobiles-card-body,
+.headsets-card-body,
+.smartwatches-card-body {
+    padding: 15px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    animation: fadeInUp 1s ease-in-out; 
     text-align: left;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translate3d(0, 100%, 0);
-    }
-    to {
-        opacity: 1;
-        transform: none;
-    }
-}
-
-.card-title {
-    font-size: 1.40rem; 
+/* Card title styling */
+.laptops-card-title,
+.mobiles-card-title,
+.headsets-card-title,
+.smartwatches-card-title {
+    font-size: 1.25rem;
     margin-bottom: 10px;
-    background: linear-gradient(45deg, #ff6ec4, #7873f5);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
- 
+    color: #2980b9;
+    font-weight: bold;
 }
 
-.card-text {
-    font-size: 1.1rem; 
-    color: #161515;
+/* Card text styling */
+.laptops-card-text,
+.mobiles-card-text,
+.headsets-card-text,
+.smartwatches-card-text {
+    font-size: 1rem;
+    color: #7f8c8d;
     margin-bottom: 10px;
-    line-height: 1.5;
 }
 
-.card-price {
-    font-size: 1.25rem; 
-    color: #161515;
+/* Card price styling */
+.laptops-card-price,
+.mobiles-card-price,
+.headsets-card-price,
+.smartwatches-card-price {
+    font-size: 1.1rem;
+    color: #27ae60;
     font-weight: bold;
     margin-bottom: 15px;
 }
 
-.btn-primary {
-    background-color: #ff6ec4;
+/* Button styling */
+.laptops-btn-primary,
+.mobiles-btn-primary,
+.headsets-btn-primary,
+.smartwatches-btn-primary {
+    background-color: #2980b9;
     border: none;
     color: #fff;
     padding: 10px 20px;
-    border-radius: 50px;
+    border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     text-decoration: none;
     font-size: 1rem;
     display: inline-block;
 }
 
-.btn-primary:hover {
-    background-color: #7873f5; 
-    transform: scale(1.1);
+/* Button hover effect */
+.laptops-btn-primary:hover,
+.mobiles-btn-primary:hover,
+.headsets-btn-primary:hover,
+.smartwatches-btn-primary:hover {
+    background-color: #3498db;
+    transform: translateY(-2px);
+}
+
+/* Modal overlay styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal content styling */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow-y: auto;
+}
+
+/* Close button styling */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff5c5c; /* Red background color for the button */
+    border: none;
+    border-radius: 50%; /* Make the button circular */
+    width: 30px; /* Width of the button */
+    height: 30px; /* Height of the button */
+    color: white; /* White color for the 'X' */
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.close-button:hover {
+    background: #ff1c1c; /* Darker red on hover */
+}
+
+.close-button:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 2px rgba(255, 92, 92, 0.5); /* Add custom focus outline */
+}
+/* Fade-in class that gets added dynamically */
+.laptops-container.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Define the fadeIn animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Card fade-in animation */
+.laptops-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Apply fade-in effect to the container when the page loads */
+.mobiles-container,
+.smartwatches-container,
+.headsets-container {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Define the fadeIn animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Card fade-in animation */
+.mobiles-card,
+.smartwatches-card,
+.headsets-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

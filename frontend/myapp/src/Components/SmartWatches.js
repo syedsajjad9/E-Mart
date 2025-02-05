@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Modal from './Modal'; // Import the Modal component
 import Checkout from './Checkout'; // Import the Checkout component
-import Image from '../Images/OIP4.jpg'; // Import the image
+import Image from '../Images/OIP4.jpg'; // Import the static image
+import '../Css/Laptops.css'; // Import the laptops CSS
 
 const SmartWatches = () => {
     const [smartWatches, setSmartWatches] = useState([]);
@@ -17,6 +18,8 @@ const SmartWatches = () => {
             .catch(error => {
                 console.error('Error fetching smartwatches:', error);
             });
+                   // Add the fade-in effect class once the component is mounted
+        document.querySelector('.smartwatches-container').classList.add('fade-in');
     }, []);
 
     const handleProceed = (smartWatch) => {
@@ -30,19 +33,17 @@ const SmartWatches = () => {
     };
 
     return (
-        <div className="container">
+        <div className="smartwatches-container">
             <h2>Smart Watches</h2>
-            <div className="row">
+            <div className="smartwatches-card-container">
                 {smartWatches.map(smartWatch => (
-                    <div className="col-md-4" key={smartWatch.id}>
-                        <div className="card mb-4">
-                            <img src={Image} className="card-img-top" alt={smartWatch.name} />
-                            <div className="card-body">
-                                <h5 className="card-title">{smartWatch.name}</h5>
-                                <p className="card-text">Description: {smartWatch.description}</p>
-                                <p className="card-price">Price: ${smartWatch.price}</p>
-                                <button onClick={() => handleProceed(smartWatch)} className="btn btn-primary">Proceed</button>
-                            </div>
+                    <div className="smartwatches-card" key={smartWatch.id}>
+                        <img src={Image} className="smartwatches-card-img-top" alt={smartWatch.name} />
+                        <div className="smartwatches-card-body">
+                            <h5 className="smartwatches-card-title">{smartWatch.name}</h5>
+                            <p className="smartwatches-card-text">Description: {smartWatch.description}</p>
+                            <p className="smartwatches-card-price">Price: ${smartWatch.price}</p>
+                            <button onClick={() => handleProceed(smartWatch)} className="smartwatches-btn-primary">Proceed</button>
                         </div>
                     </div>
                 ))}

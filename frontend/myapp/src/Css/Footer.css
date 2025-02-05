@@ -1,7 +1,7 @@
 /* Footer.js */
 
 .footer {
-    background-color: #0F3057;
+    background: linear-gradient(135deg, #0F3057, #2e597d); 
     color: #fff;
     padding: 2rem 0;
     margin-top: 5px;

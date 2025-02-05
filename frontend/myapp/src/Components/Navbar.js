@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import '../Css/Navbar.css';
+import logo from '../Images/logo.webp';
 
 const Navbar = () => {
     const [isNavOpen, setIsNavOpen] = useState(false);

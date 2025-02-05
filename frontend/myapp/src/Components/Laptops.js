@@ -1,6 +1,4 @@
-// Laptops.js
 import React, { useEffect, useState } from 'react';
-// import { Link } from 'react-router-dom';
 import axios from 'axios';
 import '../Css/Laptops.css';
 import Image from '../Images/OIP1.jpg';
@@ -20,6 +18,8 @@ const Laptops = () => {
             .catch(error => {
                 console.error('Error fetching laptops:', error);
             });
+             // Add the fade-in effect class once the component is mounted
+        document.querySelector('.laptops-container').classList.add('fade-in');
     }, []);
 
     const handleProceed = (laptop) => {
@@ -33,17 +33,17 @@ const Laptops = () => {
     };
 
     return (
-        <div className="container">
+        <div className="laptops-container">
             <h2>Laptops</h2>
-            <div className="card-container">
+            <div className="laptops-card-container">
                 {laptops.map(laptop => (
-                    <div className="card" key={laptop.id}>
-                        <img src={Image} className="card-img-top" alt={laptop.name} />
-                        <div className="card-body">
-                            <h5 className="card-title">{laptop.name}</h5>
-                            <p className="card-text">Description: {laptop.description}</p>
-                            <p className="card-price">Price: ${laptop.price}</p>
-                            <button onClick={() => handleProceed(laptop)} className="btn btn-primary">Proceed</button>
+                    <div className="laptops-card" key={laptop.id}>
+                        <img src={Image} className="laptops-card-img-top" alt={laptop.name} />
+                        <div className="laptops-card-body">
+                            <h5 className="laptops-card-title">{laptop.name}</h5>
+                            <p className="laptops-card-text">Description: {laptop.description}</p>
+                            <p className="laptops-card-price">Price: ${laptop.price}</p>
+                            <button onClick={() => handleProceed(laptop)} className="laptops-btn-primary">Proceed</button>
                         </div>
                     </div>
                 ))}

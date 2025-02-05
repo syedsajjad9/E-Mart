@@ -1,97 +1,235 @@
 /* Home.css */
 
-.container {
+  
+.home-container {
     text-align: center;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-.jumbotron {
-    background-color: #f8f9fa;
+    /* background-color: #f5f5f5; */
+    background-color: #EAEAEA;
     padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: slideInFromLeft 1s ease-in-out;
-}
-
-.display-4 {
-    font-weight: 600; 
-    color: #007bff; 
-    margin-bottom: 1rem;
-    animation: popIn 1s ease-in-out;
-}
-
-.lead {
-    color: #343a40; 
-    font-size: 1.1rem; 
-    animation: fadeInUp 1s ease-in-out;
-}
-
-.btn {
-    margin-top: 0.5rem;
-    transition: background-color 0.3s, transform 0.3s;
-    padding: 0.4rem 0.8rem; 
-    font-size: 0.9rem; 
-}
-
-.btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-}
-
-.col-md-3,.col-md-6 {
-    margin-bottom: 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: zoomIn 0.5s ease-in-out;
-    padding: 1rem;
-}
-
-.col-md-3:hover,.col-md-6:hover {
-    transform: scale(1.03);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    border: 1px solid lightgray;
-}
-
-.row {
-    justify-content: center;
-    margin-top: 1.5rem;
-}
-
-h5{
-    font-size: 1.25rem;
-    font-weight: bold;
+    opacity: 1;
+    animation: fadeIn 0.5s ease-out forwards; /* Faster fade-in */
     
-    margin-bottom: 0.5rem;
-    background: linear-gradient(45deg, #ff6ec4, #7873f5);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
-p {
-    color: #6c757d;
-    font-size: 0.9rem;
+.hero-section {
+    position: relative;
+    background: url('../Images/background.webp') no-repeat center center;
+    background-size: cover;
+    padding: 5rem 2rem;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    opacity: 1;
+    animation: fadeIn 0.5s ease-out forwards 0.2s; /* Faster fade-in with delay */
 }
 
+/* Overlay to darken the image */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Less dark */
+    border-radius: 10px;
+}
 
+/* Ensure text stays above overlay */
+.hero-title, .hero-subtitle, .hero-button {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    animation: slideInFromTop 0.7s ease-in-out; /* Slide in effect */
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem; /* Adjusted spacing */
+    font-family: 'Roboto', sans-serif;
+    animation: fadeInUp 0.7s ease-in-out; /* Fade-up effect */
+}
+
+.hero-button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.8rem 1.8rem; /* Reduced padding for faster interaction */
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease; /* Faster transition */
+}
+
+.hero-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slight hover scale effect */
+}
+
+.products-section, .manage-store-section {
+    margin-top: 2rem; /* Reduced space for quicker layout */
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 1;
+    animation: fadeInUp 0.4s ease-in-out; /* Faster fade-in */
+}
+
+.products-grid, .manage-store-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* Reduced gap for a more compact layout */
+    flex-wrap: wrap;
+}
+
+.product-card, .manage-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    padding: 1.5rem; /* Slightly reduced padding */
+    text-align: left;
+    width: calc(25% - 1.5rem);
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Quicker transition */
+    opacity: 1;
+    animation: popIn 0.9s ease-in-out; /* Pop-in effect */
+}
+
+.product-card:hover, .manage-card:hover {
+    transform: translateY(-4px); /* Reduced hover movement */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Slightly enhanced hover shadow */
+}
+
+.product-title, .manage-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.product-description, .manage-description {
+    font-size: 1rem;
+    margin-bottom: 1.2rem; /* Adjusted spacing */
+    font-family: 'Roboto', sans-serif;
+    color: #666;
+}
+
+.product-button, .manage-button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.6rem 1.2rem; /* Reduced padding for faster interaction */
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.product-button:hover, .manage-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Subtle scale effect on hover */
+}
+
+/* Keyframe for fade-in animation */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideInFromLeft {
     0% {
-        transform: translateX(-100%);
         opacity: 0;
     }
     100% {
-        transform: translateX(0);
         opacity: 1;
     }
 }
 
-@keyframes zoomIn {
-    from { transform: scale(0.5); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+@keyframes slideInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
+@keyframes popIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .product-card, .manage-card {
+        width: calc(33.33% - 1.5rem);
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+    .product-card, .manage-card {
+        width: calc(50% - 1.5rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 4rem 1rem;
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    .product-card, .manage-card {
+        width: calc(50% - 1.5rem);
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 3rem 1rem;
+    }
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    .product-card, .manage-card {
+        width: calc(100% - 1.5rem);
+    }
+    .home-container {
+        padding: 1rem;
+    }
+}

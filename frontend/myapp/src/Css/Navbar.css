@@ -1,8 +1,7 @@
-/* Navbar.css */
-
 .navbar {
-    background-color: #0F3057;
+     background: linear-gradient(135deg, #0F3057, #2e597d); /*Gradient background */
     padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
     transition: padding 0.3s ease, background-color 0.3s ease;
 }
 
@@ -10,11 +9,12 @@
     font-size: 2rem;
     font-weight: bold;
     color: #ece6e6;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-brand:hover {
     color: #ffffff;
+    transform: scale(1.1); /* Slightly increase the size on hover */
 }
 
 .navbar-toggler {
@@ -27,21 +27,25 @@
     background-image: url('data:image/svg+xml;charset=UTF8,<svg viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg"><path stroke="rgba(255, 255, 255, 0.7)" stroke-width="2" stroke-linecap="round" d="M4 7h22M4 15h22M4 23h22"/></svg>');
 }
 
+.navbar-nav {
+    align-items: center;
+}
+
 .navbar-nav .nav-link {
     color: #ececec;
-    border: 1px solid #0F3057;
     font-size: 1rem;
     margin-right: 20px;
-    transition: color 0.3s ease;
+    font-weight: 500;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border: 2px solid transparent; /* Make the border transparent */
 }
 
 .navbar-nav .nav-link:hover {
     color: #ffffff;
     text-decoration: none;
-    border-bottom: 1px solid white;
+    border-bottom: 2px solid white; /* Slightly thicker border on hover */
 }
 
-/* Add dropdown styling */
 .nav-item.dropdown {
     position: relative;
 }
@@ -49,7 +53,7 @@
 .nav-item.dropdown .dropdown-menu {
     display: none;
     position: absolute;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.95);  /* Semi-transparent */
     border: none;
     box-shadow: 0 8px 14px rgba(0, 0, 0, 0.1);
     margin-top: 0;
@@ -58,12 +62,15 @@
     transition: opacity 0.3s ease, transform 0.3s ease;
     opacity: 0;
     transform: translateY(-10px);
+    z-index: 1000;
 }
 
-.nav-item.dropdown:hover .dropdown-menu {
+.nav-item.dropdown:hover .dropdown-menu,
+.nav-item.dropdown.show .dropdown-menu {
     display: block;
     opacity: 1;
     transform: translateY(0);
+    animation: fadeIn 0.3s ease-in-out; /* Fade-in effect for dropdown */
 }
 
 .nav-item.dropdown .dropdown-item {
@@ -76,10 +83,12 @@
     color: #ffffff;
     background-color: #0F3057;
 }
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
 @keyframes slideDown {
     from {
         transform: translateY(-100%);
@@ -112,14 +121,43 @@
     }
 
     .navbar-nav .nav-link {
-        padding: 10px 0;
+        padding: 12px 0;
+        font-size: 1.2rem;  /* Increase text size for mobile view */
         border-bottom: 1px solid #ffffff;
-        margin-right: 0;
+       
+       
     }
 
     .navbar-nav .nav-link:last-child {
         border-bottom: none;
+        
+    }
+    .navbar-nav .dropdown-toggle{
+        border-bottom: none;
+    }
+    .nav-item.dropdown .dropdown-menu {
+        position: static;
+        display: none;
+        opacity: 1;
+        transform: translateY(0);
+        box-shadow: none;
+        background-color: white;
+        padding: 0;
+        margin: 0;
+        
+    }
+
+    .nav-item.dropdown .dropdown-item {
+        padding: 12px 20px;
+        color: #0F3057;
+        background-color: white;
+    }
+
+    .nav-item.dropdown .dropdown-item:hover {
+        background-color: #2e597d;
+    }
+
+    .nav-item.dropdown .dropdown-menu.show {
+        display: block;
     }
 }
-
-
